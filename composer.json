@@ -1,0 +1,19 @@
+{
+    "name": "hugo/query-builder",
+    "type": "library",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Hugo\\QueryBuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hugo Andrade",
+            "email": "hugoramosandrade@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^7.1"
+    }
+}
