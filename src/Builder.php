@@ -2,6 +2,7 @@
 
 namespace Hugo\QueryBuilder;
 
+use Hugo\QueryBuilder\Insert\InsertBuilder;
 use Hugo\QueryBuilder\Select\FromTableBuilder;
 use Hugo\QueryBuilder\Update\UpdateBuilder;
 
@@ -25,8 +26,8 @@ class Builder
         return new UpdateBuilder($this->sql);
     }
 
-    public function insert()
+    public function insert(): InsertBuilder
     {
-        //
+        return new InsertBuilder($this->sql);
     }
 }
