@@ -1,17 +1,17 @@
 <?php
 
-namespace Hugo\QueryBuilder\Select;
+namespace Hugo\QueryBuilder\Condition;
 
 use Hugo\QueryBuilder\Sql;
 
 class Where
 {
-    private array $binds = [];
     private array $wheres = [];
-
+    
     public function __construct(
         private string $table,
-        private Sql $sql
+        private Sql $sql,
+        private array $binds = [],
     )
     {
         //
@@ -97,6 +97,7 @@ class Where
             $wheres = " where ".trim(implode(" and ", $this->wheres));
             $this->sql->concact($wheres);
         }
+        if (count($this->binds) > 0) $this->sql->addBind($this->binds);
         return $this->sql;
     }
 }

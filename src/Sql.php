@@ -30,4 +30,13 @@ class Sql implements Stringable
     {
         $this->sql .= $partial;
     }
+
+    public function addBind(array|string|int $value)
+    {
+        if (is_array($value)) {
+            $this->binds = [...$this->binds, ...$value];
+        } else {
+            $this->binds[] = $value;
+        }
+    }
 }

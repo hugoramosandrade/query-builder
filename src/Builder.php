@@ -3,6 +3,7 @@
 namespace Hugo\QueryBuilder;
 
 use Hugo\QueryBuilder\Select\FromTableBuilder;
+use Hugo\QueryBuilder\Update\UpdateBuilder;
 
 class Builder
 {
@@ -19,9 +20,9 @@ class Builder
         return new FromTableBuilder($this->sql, $collumns);
     }
 
-    public function update()
+    public function update(): UpdateBuilder
     {
-        //
+        return new UpdateBuilder($this->sql);
     }
 
     public function insert()
